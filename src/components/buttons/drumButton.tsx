@@ -1,4 +1,4 @@
-import { Box, Button, Text } from "@chakra-ui/react"
+import { Box, Text } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 import { DrumPad } from "../../constants"
 
@@ -49,8 +49,10 @@ const DrumButton: React.FC<Props> = ({ mute, button, onClick }) => {
       width="6vh"
       height="6vh"
       bg={buttonColor}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
       borderRadius={5}
-      p={5}
       sx={{
         cursor: "pointer",
       }}
@@ -61,8 +63,8 @@ const DrumButton: React.FC<Props> = ({ mute, button, onClick }) => {
         src={button.audio}
         className="clip"
         hidden
-      ></audio>
-      <Text align="center" as="b" color="white">
+      />
+      <Text fontSize="lg" as="b" color="white" align="center">
         {button.name}
       </Text>
     </Box>

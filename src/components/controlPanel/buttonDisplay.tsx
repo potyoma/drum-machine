@@ -16,7 +16,7 @@ const ButtonDisplay: React.FC<Props> = ({ button }) => {
       id="display"
     >
       <Text color="white" as="b" align="center">
-        {button?.description || "Make some noise!"}
+        {button?.description || "Noise!"}
       </Text>
     </Box>
   )
