@@ -673,7 +673,7 @@
     "@chakra-ui/utils" "2.0.4"
     csstype "^3.0.11"
 
-"@chakra-ui/switch@2.0.6":
+"@chakra-ui/switch@2.0.6", "@chakra-ui/switch@^2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@chakra-ui/switch/-/switch-2.0.6.tgz#60553d99c39bc7e4e09a242a6870c486142713d7"
   integrity sha512-agjRFu0Fy5u0D8MUdckpIen7jQFkYRg08xOWX57VXQEEJN7L8Pe5hF57aig65TXZMXQTcLB2ss6pQFYYDbt3cQ==
