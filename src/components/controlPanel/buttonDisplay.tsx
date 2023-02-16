@@ -1,4 +1,3 @@
-import { Box, Text } from "@chakra-ui/react"
 import { DrumPad } from "../../constants"
 
 type Props = {
@@ -7,18 +6,14 @@ type Props = {
 
 const ButtonDisplay: React.FC<Props> = ({ button }) => {
   return (
-    <Box
-      width="18vh"
-      maxH="3vh"
-      bg="coral"
-      border={1}
-      borderRadius={5}
+    <div
+      className="bg-red-300 rounded-lg px-2 py-1 flex items-center justify-center"
       id="display"
     >
-      <Text color="white" as="b" align="center">
+      <span className="text-extrabold text-white">
         {button?.description || "Noise!"}
-      </Text>
-    </Box>
+      </span>
+    </div>
   )
 }
 

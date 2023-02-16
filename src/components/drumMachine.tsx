@@ -1,4 +1,3 @@
-import { Container, SimpleGrid } from "@chakra-ui/react"
 import { useState } from "react"
 import { DrumPad } from "../constants"
 import { DrumButtons } from "./buttons/drumButtons"
@@ -16,19 +15,15 @@ const DrumMachine: React.FC = () => {
   }
 
   return (
-    <Container
+    <div
       id="drum-machine"
-      bg="cornflowerblue"
-      maxW="lg"
-      borderWidth="thick"
-      borderColor="burlywood"
-      borderRadius="md"
+      className="bg-blue-300 rounded-md shadow-md hover:shadow-xl p-4"
     >
-      <SimpleGrid columns={2}>
+      <div className="grid md:grid-cols-2">
         <DrumButtons mute={mute} onSelectButton={handleSelectButton} />
         <PanelControls mute={mute} onMute={handleMute} button={button} />
-      </SimpleGrid>
-    </Container>
+      </div>
+    </div>
   )
 }
 

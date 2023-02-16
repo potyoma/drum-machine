@@ -1,4 +1,3 @@
-import { Box, Text } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react"
 import { DrumPad } from "../../constants"
 
@@ -9,24 +8,13 @@ type Props = {
 }
 
 const DrumButton: React.FC<Props> = ({ mute, button, onClick }) => {
-  enum ButtonColor {
-    InActive = "burlywood",
-    Active = "crimson",
-  }
-
-  const [buttonColor, setButtonColor] = useState<ButtonColor>(
-    ButtonColor.InActive
-  )
-
   const playAudio = (button: DrumPad) => {
     const audio = document.getElementById(button.name) as HTMLAudioElement
     audio.currentTime = 0
     audio.play()
-    setTimeout(() => setButtonColor(ButtonColor.InActive), 100)
   }
 
   const handleClick = (button: DrumPad) => {
-    !mute && setButtonColor(ButtonColor.Active)
     !mute && playAudio(button)
     onClick(button)
   }
@@ -42,21 +30,7 @@ const DrumButton: React.FC<Props> = ({ mute, button, onClick }) => {
   }, [handleKeyDown])
 
   return (
-    <Box
-      id={button.description.replaceAll(/\s/g, "-")}
-      className="drum-pad"
-      onClick={() => handleClick(button)}
-      width="6vh"
-      height="6vh"
-      bg={buttonColor}
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      borderRadius={5}
-      sx={{
-        cursor: "pointer",
-      }}
-    >
+    <div className="h-16 w-16">
       <audio
         autoPlay={false}
         id={button.name}
@@ -64,10 +38,14 @@ const DrumButton: React.FC<Props> = ({ mute, button, onClick }) => {
         className="clip"
         hidden
       />
-      <Text fontSize="lg" as="b" color="white" align="center">
-        {button.name}
-      </Text>
-    </Box>
+      <button
+        id={button.description.replaceAll(/\s/g, "-")}
+        onClick={() => handleClick(button)}
+        className="bg-yellow-500 hover:bg-rose-500 rounded-md text-white w-full h-full focus:bg-rose-500 text-"
+      >
+        <span>{button.name}</span>
+      </button>
+    </div>
   )
 }
 
