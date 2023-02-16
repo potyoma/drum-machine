@@ -1,4 +1,3 @@
-import { Link, VStack } from "@chakra-ui/react"
 import { DrumPad } from "../../constants"
 import { ButtonDisplay } from "./buttonDisplay"
 import { PowerSwitch } from "./powerSwitch"
@@ -11,19 +10,13 @@ type Props = {
 
 const PanelControls: React.FC<Props> = ({ mute, onMute, button }) => {
   return (
-    <VStack align="center" spacing={5} m="auto">
-      <Link
-        href="https://github.com/potyoma/drum-machine"
-        target="_blank"
-        textDecor="none"
-        color="white"
-        as="b"
-      >
-        @potyoma
-      </Link>
+    <div className="flex flex-col justify-center items-center gap-2">
+      <a href="https://github.com/potyoma/drum-machine" className=" block">
+        <h5 className="text-white text-extrabold text-xl">@potyoma</h5>
+      </a>
       <PowerSwitch mute={mute} onClick={onMute} />
       <ButtonDisplay button={button} />
-    </VStack>
+    </div>
   )
 }
 

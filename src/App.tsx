@@ -1,14 +1,12 @@
-import { Box, Center, ChakraProvider } from "@chakra-ui/react"
-import "./App.css"
 import { DrumMachine } from "./components/drumMachine"
 
 const App = () => {
   return (
-    <ChakraProvider>
-      <Center h="93.5vh">
+    <div className="flex justify-center items-center h-screen">
+      <div className="my-auto">
         <DrumMachine />
-      </Center>
-    </ChakraProvider>
+      </div>
+    </div>
   )
 }
 

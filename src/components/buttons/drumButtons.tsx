@@ -1,4 +1,3 @@
-import { Box, Grid } from "@chakra-ui/react"
 import { BUTTONS, DrumPad } from "../../constants"
 import { DrumButton } from "./drumButton"
 
@@ -9,9 +8,9 @@ type Props = {
 
 const DrumButtons: React.FC<Props> = ({ mute, onSelectButton }) => {
   return (
-    <Box padding={5}>
-      <Grid templateColumns="repeat(3, 1fr)" gap={2}>
-        {BUTTONS?.map((b) => (
+    <div className="p-3">
+      <div className="grid grid-cols-3 grid-rows-3 gap-2">
+        {BUTTONS?.map(b => (
           <DrumButton
             mute={mute}
             key={b.name}
@@ -19,8 +18,8 @@ const DrumButtons: React.FC<Props> = ({ mute, onSelectButton }) => {
             button={b}
           />
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   )
 }
 
